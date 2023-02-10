@@ -214,6 +214,12 @@ namespace project
         
         Console.WriteLine(hero.Name + "  HP:{0}, Mp:{1}",  hero.HP,hero.MP);
         Console.WriteLine(enemy.Name + " HP:{0}", enemy.HP);
+        Console.WriteLine("  (),())");
+        Console.WriteLine("  oo   '''//,        _");
+        Console.WriteLine(",/_;~,        ),    / '");
+        Console.WriteLine("      ',|  )    |__.'");
+        Console.WriteLine("      '~  '~----''");
+
         Console.WriteLine();
         Console.ReadLine();
         

@@ -43,7 +43,29 @@ namespace project
 
     }
 
-
+    public void drawrat(){
+        Console.WriteLine("  (),())");
+        Console.WriteLine("  oo   '''//,        _");
+        Console.WriteLine(",/_;~,        ),    / '");
+        Console.WriteLine("      ',|  )    |__.'");
+        Console.WriteLine("      '~  '~----''");
+    }
+    public void drawspider(){
+      Console.WriteLine("          (");
+      Console.WriteLine("           )");
+      Console.WriteLine("          (");
+      Console.WriteLine("    /\\  .-'''-.  /\\");
+      Console.WriteLine("   //\\/   ,,,  \\//\\\\");
+      Console.WriteLine("   |/\\| ,;;;;;, |/\\\\|");
+      Console.WriteLine("   //\\\\;-'''-;///\\\\");
+      Console.WriteLine("  //  \\/   .   \\/  \\");
+      Console.WriteLine("(| ,-_| \\ | / |_-, |)");
+      Console.WriteLine("   //`__\\.-.-./__`\\\\");
+      Console.WriteLine("  // /.-(() ())-.\\ \\\\");
+      Console.WriteLine(" (\\ |)   '---'   (| /)");
+      Console.WriteLine("  ` (|           |) `");
+      Console.WriteLine("    \\)           (/");
+    }
 
     public int GetDamage() { return this.damage; }
     public int GetCost() { return this.cost; }
@@ -214,11 +236,8 @@ namespace project
         
         Console.WriteLine(hero.Name + "  HP:{0}, Mp:{1}",  hero.HP,hero.MP);
         Console.WriteLine(enemy.Name + " HP:{0}", enemy.HP);
-        Console.WriteLine("  (),())");
-        Console.WriteLine("  oo   '''//,        _");
-        Console.WriteLine(",/_;~,        ),    / '");
-        Console.WriteLine("      ',|  )    |__.'");
-        Console.WriteLine("      '~  '~----''");
+        
+        
 
         Console.WriteLine();
         Console.ReadLine();
@@ -444,15 +463,6 @@ namespace project
 
       }}
 
-
-
-
-
-  
-
-
-    
-
       Hero hero = new Hero(nazwa, klasa);
       Hero rat = new Hero("rat", "rat");
       Hero spider = new Hero("spider", "spider");
@@ -497,7 +507,7 @@ namespace project
     Console.WriteLine("d. idz na wschód");
     Console.WriteLine("5. pokaż mape");
     Console.WriteLine("6. pokaż  statystyki");
-    Console.WriteLine("7. pokaż -");
+    Console.WriteLine("7. dychnij se");
     Console.WriteLine("8. pokaż -");
     Console.WriteLine("10. wyjdź z gry");
 

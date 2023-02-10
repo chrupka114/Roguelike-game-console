@@ -36,3 +36,10 @@ C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\zdalne2.csproj.CoreComp
 C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\zdalne2.dll
 C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\refint\zdalne2.dll
 C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\zdalne2.pdb
+C:\Users\2836\Documents\GitHub\gerka-PP\bin\Debug\net6.0\zdalne2.exe
+C:\Users\2836\Documents\GitHub\gerka-PP\bin\Debug\net6.0\zdalne2.deps.json
+C:\Users\2836\Documents\GitHub\gerka-PP\bin\Debug\net6.0\zdalne2.runtimeconfig.json
+C:\Users\2836\Documents\GitHub\gerka-PP\bin\Debug\net6.0\zdalne2.dll
+C:\Users\2836\Documents\GitHub\gerka-PP\bin\Debug\net6.0\zdalne2.pdb
+C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\zdalne2.genruntimeconfig.cache
+C:\Users\2836\Documents\GitHub\gerka-PP\obj\Debug\net6.0\ref\zdalne2.dll

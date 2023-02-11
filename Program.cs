@@ -43,6 +43,25 @@ namespace project
 
         }
 
+        public void randomencounter(Hero hero)
+        {
+            Rand rand = new Rand();
+            int r = rand.Run(0, 1);
+            Hero rat = new Hero("rat", "rat");
+            Hero spider = new Hero("spider", "spider");
+            switch (r)
+            {
+                case 0:
+                    Console.WriteLine("spotykasz szczura");
+                    hero.walka(rat, hero, 1);
+                    break;
+                case 1:
+                    Console.WriteLine("spotykasz pająka");
+                    hero.walka(spider, hero, 2);
+                    break;
+            }
+        }
+
         public void drawrat()
         {
             Console.WriteLine("  (),())");
@@ -261,15 +280,15 @@ namespace project
 
                 Console.WriteLine(hero.Name + "  HP:{0}, Mp:{1}", hero.HP, hero.MP);
                 Console.WriteLine(enemy.Name + " HP:{0}", enemy.HP);
-                switch(enemyid)
+                switch (enemyid)
                 {
                     case 1:
-                    drawrat();
-                    break;
+                        drawrat();
+                        break;
 
                     case 2:
-                    drawspider();
-                    break;
+                        drawspider();
+                        break;
                 }
 
 
@@ -384,19 +403,10 @@ namespace project
             int przod = 8, tyl = 8, prawo = 8, lewo = 8;
             bool exitexists = false;
 
-
-
-
-
-
-
-
             //mapa[x,y]:=0 niezbadane,=1 istnieje,=2 nie istnieje,=3 przeciwnik,=4 loot
 
             while (exitexists == false)
             {
-
-
 
                 przod = pokoj[1] - 1;
                 if (mapa[pokoj[0], przod] == 0)
@@ -415,7 +425,6 @@ namespace project
                         iloscpokoi++;
                     }
                 }
-
 
                 tyl = pokoj[1] + 1;
                 if (mapa[pokoj[0], tyl] == 0)
@@ -538,6 +547,7 @@ namespace project
             Hero hero = new Hero(nazwa, klasa);
             Hero rat = new Hero("rat", "rat");
             Hero spider = new Hero("spider", "spider");
+
             //  Console.WriteLine(rat.Name + " Str:{0} Dex:{1} Int:{2} HP:{3} MP:{4}",
             //                  rat.GetStrength(),
             //                   rat.GetDexterity(),
@@ -556,8 +566,6 @@ namespace project
             int iloscpokoi = 1;
             mapa[5, 6] = 1;
 
-
-
             //generowanie mapy
             while (iloscpokoi < 11 || iloscpokoi > 11)
             {
@@ -567,7 +575,6 @@ namespace project
 
                 iloscpokoi = mapgen(mapa, iloscpokoi);
             }
-
 
             string option = "g";
             while (option != "10")
@@ -603,19 +610,8 @@ namespace project
                             case 3:
                                 playerposition[1] = playerposition[1] - 1;
                                 Console.WriteLine("wchodzisz do nowego pokoju");
-                                Rand rand = new Rand();
-                                int r = rand.Run(0, 1);
-                                switch (r)
-                                {
-                                    case 0:
-                                        Console.WriteLine("spotykasz szczura");
-                                        hero.walka(rat, hero,1);
-                                        break;
-                                    case 1:
-                                        Console.WriteLine("spotykasz pająka");
-                                        hero.walka(spider, hero,2);
-                                        break;
-                                }
+
+                                hero.randomencounter(hero);
                                 mapa[playerposition[0], playerposition[1]] = 1;
                                 rat.HP = (rat.GetConstitution() * 5) + rat.GetStrength();
                                 spider.HP = (spider.GetConstitution() * 5) + spider.GetStrength();
@@ -640,19 +636,7 @@ namespace project
                             case 3:
                                 playerposition[1] = playerposition[1] + 1;
                                 Console.WriteLine("wchodzisz do nowego pokoju");
-                                Rand rand = new Rand();
-                                int r = rand.Run(0, 1);
-                                switch (r)
-                                {
-                                    case 0:
-                                        Console.WriteLine("spotykasz szczura");
-                                        hero.walka(rat, hero,1);
-                                        break;
-                                    case 1:
-                                        Console.WriteLine("spotykasz pająka");
-                                        hero.walka(spider, hero,2);
-                                        break;
-                                }
+                                hero.randomencounter(hero);
                                 mapa[playerposition[0], playerposition[1]] = 1;
                                 rat.HP = (rat.GetConstitution() * 5) + rat.GetStrength();
                                 spider.HP = (spider.GetConstitution() * 5) + spider.GetStrength();
@@ -677,19 +661,7 @@ namespace project
                             case 3:
                                 playerposition[0] = playerposition[0] + 1;
                                 Console.WriteLine("wchodzisz do nowego pokoju");
-                                Rand rand = new Rand();
-                                int r = rand.Run(0, 1);
-                                switch (r)
-                                {
-                                    case 0:
-                                        Console.WriteLine("spotykasz szczura");
-                                        hero.walka(rat, hero,1);
-                                        break;
-                                    case 1:
-                                        Console.WriteLine("spotykasz pająka");
-                                        hero.walka(spider, hero,2);
-                                        break;
-                                }
+                                hero.randomencounter(hero);
                                 mapa[playerposition[0], playerposition[1]] = 1;
                                 rat.HP = (rat.GetConstitution() * 5) + rat.GetStrength();
                                 spider.HP = (spider.GetConstitution() * 5) + spider.GetStrength();
@@ -705,10 +677,6 @@ namespace project
                         Console.Clear();
                         break;
 
-
-
-
-
                     case "a":
                         switch (mapa[playerposition[0] - 1, playerposition[1]])
                         {
@@ -719,19 +687,7 @@ namespace project
                             case 3:
                                 playerposition[0] = playerposition[0] - 1;
                                 Console.WriteLine("wchodzisz do nowego pokoju");
-                                Rand rand = new Rand();
-                                int r = rand.Run(0, 1);
-                                switch (r)
-                                {
-                                    case 0:
-                                        Console.WriteLine("spotykasz szczura");
-                                        hero.walka(rat, hero,1);
-                                        break;
-                                    case 1:
-                                        Console.WriteLine("spotykasz pająka");
-                                        hero.walka(spider, hero,2);
-                                        break;
-                                }
+                                hero.randomencounter(hero);
                                 mapa[playerposition[0], playerposition[1]] = 1;
                                 rat.HP = (rat.GetConstitution() * 5) + rat.GetStrength();
                                 spider.HP = (spider.GetConstitution() * 5) + spider.GetStrength();

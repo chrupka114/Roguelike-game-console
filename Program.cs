@@ -147,8 +147,8 @@ namespace project
 
         public void walka(Hero enemy, Hero hero, int enemyid)
         {
-                     
-                        
+
+
 
             int? opt = 8, tour = 1;
             while (hero.HP > 0 && enemy.HP > 0)
@@ -157,31 +157,33 @@ namespace project
                 {
                     Console.WriteLine("Your Turn: " + hero.Name);
                     Console.Write("1:Attack, 2:Spell, 3:eq, 4:ucieczka ");
-                    
+
                     opt = 8;
-                    while(opt>4){
-                    opt = int.Parse(Console.ReadLine());
+                    while (opt > 4)
+                    {
+                        opt = int.Parse(Console.ReadLine());
                     }
                 }
 
-                else {
-                    switch (enemyid)
+                else
                 {
-                    case 1:
-                        Console.ReadLine();
-                        Console.Clear();
-                        drawrat();
-                        break;
+                    switch (enemyid)
+                    {
+                        case 1:
+                            Console.ReadLine();
+                            Console.Clear();
+                            drawrat();
+                            break;
 
-                    case 2:
-                        Console.ReadLine();
-                        Console.Clear();
-                        drawspider();
-                        break;
-                }
-                     Console.WriteLine(enemy.Name + " attacks"); opt = 1; 
-                 Console.WriteLine( hero.Name + "  HP:{0}, Mp:{1}", hero.HP, hero.MP);
-                Console.WriteLine(enemy.Name + " HP:{0}", enemy.HP);
+                        case 2:
+                            Console.ReadLine();
+                            Console.Clear();
+                            drawspider();
+                            break;
+                    }
+                    Console.WriteLine(enemy.Name + " attacks"); opt = 1;
+                    Console.WriteLine(hero.Name + "  HP:{0}, Mp:{1}", hero.HP, hero.MP);
+                    Console.WriteLine(enemy.Name + " HP:{0}", enemy.HP);
                 }
 
                 switch (opt)
@@ -317,8 +319,9 @@ namespace project
 
         }
 
-        public void SpellAttack(Hero enemy) { 
-            
+        public void SpellAttack(Hero enemy)
+        {
+
         }
 
         public void Attack(Hero enemy)
@@ -590,7 +593,7 @@ namespace project
                 Console.WriteLine("jestes w pokoju co robisz");
 
                 Console.WriteLine("w. idz na północ");
-                
+
                 Console.WriteLine("s. idz na połódnie");
                 Console.WriteLine("a. idz na zachód");
                 Console.WriteLine("d. idz na wschód");

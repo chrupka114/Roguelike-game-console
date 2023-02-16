@@ -150,7 +150,7 @@ namespace project
 
 
 
-            int? opt = 8, tour = 1;
+            int opt = 8, tour = 1;
             while (hero.HP > 0 && enemy.HP > 0)
             {
                 if (tour == 1)
@@ -161,7 +161,8 @@ namespace project
                     opt = 8;
                     while (opt > 4)
                     {
-                        opt = int.Parse(Console.ReadLine());
+
+                        int.TryParse(Console.ReadLine(), out opt);
                     }
                 }
 
@@ -197,95 +198,15 @@ namespace project
                         int spell = 9;
 
 
-                        while (spell >= 6)
-                        {
-                            Console.WriteLine("jaki spell(1:fireball 2:thunderbolt 3:Wind Sheer 4:Earth Shock 5:heal)");
-                            spell = int.Parse(Console.ReadLine());
-                            if (spell <= 0 || spell >= 6) Console.WriteLine("nie ma takiego spella");
-                        }
-                        switch (spell)
-                        {
-                            case 1:
-                                if (hero.MP < spellcost("fireball"))
-                                {
-                                    Console.WriteLine("za mało many");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    enemy.HP = enemy.HP - spelldamage("fireball");
-                                    hero.MP = hero.MP - spellcost("fireball");
-                                    Console.WriteLine("jeb");
-                                }
-                                break;
+                        // while (spell >= 6 || spell == 0)
+                        // {
+                        //     Console.WriteLine("jaki spell(1:fireball 2:thunderbolt 3:Wind Sheer 4:Earth Shock 5:heal)");
 
-                            case 2:
-                                if (hero.MP < spellcost("thunderbolt"))
-                                {
-                                    Console.WriteLine("za mało many");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    enemy.HP = enemy.HP - spelldamage("thunderbolt");
-                                    hero.MP = hero.MP - spellcost("thunderbolt");
-                                    Console.WriteLine("jeb");
-                                }
-                                break;
-
-                            case 3:
-                                if (hero.MP < spellcost("wind sheer"))
-                                {
-                                    Console.WriteLine("za mało many");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    enemy.HP = enemy.HP - spelldamage("wind sheer");
-                                    hero.MP = hero.MP - spellcost("wind sheer");
-                                    Console.WriteLine("jeb");
-                                }
-                                break;
-
-                            case 4:
-                                if (hero.MP < spellcost("earth shock"))
-                                {
-                                    Console.WriteLine("za mało many");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    enemy.HP = enemy.HP - spelldamage("earth shock");
-                                    hero.MP = hero.MP - spellcost("earth shock");
-                                    Console.WriteLine("jeb");
-                                }
-                                break;
-                            case 5:
-                                if (hero.MP < spellcost("heal"))
-                                {
-                                    Console.WriteLine("za mało many");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    if (hero.HP + spelldamage("heal") > (hero.GetConstitution() * 10) + hero.GetStrength())
-                                    {
-                                        hero.HP = (hero.GetConstitution() * 10) + hero.GetStrength();
-                                        hero.MP = hero.MP - spellcost("heal");
-                                    }
-                                    else
-                                    {
-                                        hero.HP = hero.HP + spelldamage("heal");
-                                        hero.MP = hero.MP - spellcost("heal");
-                                    }
-                                }
-                                break;
-
-
-                            default:
-                                Console.WriteLine("nie ma takiego spella");
-                                break;
-                        }
+                        //     int.TryParse(Console.ReadLine(), out spell);
+                        //     Console.WriteLine(spell);
+                        //     if (spell >= 6) Console.WriteLine("nie ma takiego spella");
+                        // }
+                        SpellAttack(ref enemy,ref hero,ref spell);
 
 
                         break;
@@ -296,10 +217,7 @@ namespace project
                     case 4:
                         break;
 
-                    case null:
-                        Console.WriteLine("nie ma takiej opcji ");
-                        tour--;
-                        break;
+
 
                     default:
                         Console.WriteLine("nie ma takiej opcji ");
@@ -323,8 +241,96 @@ namespace project
 
         }
 
-        public void SpellAttack(Hero enemy)
+        public void SpellAttack(ref Hero enemy,ref Hero hero,ref int spell)
         {
+                     Console.WriteLine("jaki spell(1:fireball 2:thunderbolt 3:Wind Sheer 4:Earth Shock 5:heal)");
+                    int.TryParse(Console.ReadLine(), out spell);
+            switch (spell)
+            {
+                case 1:
+                    if (hero.MP < spellcost("fireball"))
+                    {
+                        Console.WriteLine("za mało many");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        enemy.HP = enemy.HP - spelldamage("fireball");
+                        hero.MP = hero.MP - spellcost("fireball");
+                        Console.WriteLine("jeb");
+                    }
+                    break;
+
+                case 2:
+                    if (hero.MP < spellcost("thunderbolt"))
+                    {
+                        Console.WriteLine("za mało many");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        enemy.HP = enemy.HP - spelldamage("thunderbolt");
+                        hero.MP = hero.MP - spellcost("thunderbolt");
+                        Console.WriteLine("jeb");
+                    }
+                    break;
+
+                case 3:
+                    if (hero.MP < spellcost("wind sheer"))
+                    {
+                        Console.WriteLine("za mało many");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        enemy.HP = enemy.HP - spelldamage("wind sheer");
+                        hero.MP = hero.MP - spellcost("wind sheer");
+                        Console.WriteLine("jeb");
+                    }
+                    break;
+
+                case 4:
+                    if (hero.MP < spellcost("earth shock"))
+                    {
+                        Console.WriteLine("za mało many");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        enemy.HP = enemy.HP - spelldamage("earth shock");
+                        hero.MP = hero.MP - spellcost("earth shock");
+                        Console.WriteLine("jeb");
+                    }
+                    break;
+                case 5:
+                    if (hero.MP < spellcost("heal"))
+                    {
+                        Console.WriteLine("za mało many");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        if (hero.HP + spelldamage("heal") > (hero.GetConstitution() * 10) + hero.GetStrength())
+                        {
+                            hero.HP = (hero.GetConstitution() * 10) + hero.GetStrength();
+                            hero.MP = hero.MP - spellcost("heal");
+                        }
+                        else
+                        {
+                            hero.HP = hero.HP + spelldamage("heal");
+                            hero.MP = hero.MP - spellcost("heal");
+                        }
+                    }
+                    break;
+
+
+                default:
+                    Console.WriteLine("nie ma takiego spella");
+                   
+                    
+                    SpellAttack(ref enemy,ref hero,ref spell);
+                    break;
+            }
 
         }
 

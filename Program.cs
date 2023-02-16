@@ -215,6 +215,7 @@ namespace project
                                 {
                                     enemy.HP = enemy.HP - spelldamage("fireball");
                                     hero.MP = hero.MP - spellcost("fireball");
+                                    Console.WriteLine("jeb");
                                 }
                                 break;
 
@@ -228,6 +229,7 @@ namespace project
                                 {
                                     enemy.HP = enemy.HP - spelldamage("thunderbolt");
                                     hero.MP = hero.MP - spellcost("thunderbolt");
+                                    Console.WriteLine("jeb");
                                 }
                                 break;
 
@@ -241,6 +243,7 @@ namespace project
                                 {
                                     enemy.HP = enemy.HP - spelldamage("wind sheer");
                                     hero.MP = hero.MP - spellcost("wind sheer");
+                                    Console.WriteLine("jeb");
                                 }
                                 break;
 
@@ -254,6 +257,7 @@ namespace project
                                 {
                                     enemy.HP = enemy.HP - spelldamage("earth shock");
                                     hero.MP = hero.MP - spellcost("earth shock");
+                                    Console.WriteLine("jeb");
                                 }
                                 break;
                             case 5:
